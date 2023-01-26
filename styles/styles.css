@@ -2,15 +2,22 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    --offwhite: rgb(253, 245, 235);
+}
+
+body {
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
 }
 
 .section {
+    position: relative;
     background-size: cover, contain;
     background-repeat: no-repeat;
 }
 
 #section-1 {
     background-image: url('../images/background_1.jpg');
+    background-position: bottom;
 }
 
 #section-2 {
@@ -18,7 +25,7 @@
     background-position: top;
 }
 
-#section-3 {
+#section-5 {
     background-image: url('../images/background_3.jpg');
     background-position: bottom;
 }
@@ -26,15 +33,16 @@
 #navbar {
     position: absolute;
     z-index: 999;
-    right: 5%;
-    top: 3%;
+    right: 8%;
+    top: 4%;
 }
 
 #navbar > ul {
     font-family: 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    font-size: 16pt;
+    font-size: 14pt;
     display: flex;
     flex-direction: row;
+    align-items: center;
     list-style: none;
     gap: 40px;
     color: white;
@@ -44,16 +52,69 @@
                 0 -2px 2px #252525a2;
 }
 
-#border {
+#navbar.invert > ul {
+    color: black;
+    text-shadow: none;
+}
+
+#navigation li {
+    position: relative;
+}
+
+#navbar li:hover {
+    cursor: pointer;
+}
+
+#navbar span {
+    font-size: 10pt;
+}
+
+#buy_now_nav {
+    position: relative;
+    margin-left: 40px;
+}
+
+.buy_now_nav {
     position: absolute;
+    top: -5px;
+    height: 30px;
+	width: 85px;
+    background-color: rgb(216, 216, 216);
+    background-image: linear-gradient(to top, rgb(107, 93, 93), rgb(244, 248, 238)10%, rgb(235, 240, 222) 10% 80%, rgb(185, 191, 199));
+}
+
+.buy_now_nav {
+    border-left: 2px solid #888;
+    border-top: 2px solid #888;
+    border-bottom: 2px solid #aaa;
+}
+
+.buy_now_nav.trapezoid_left {
+    border-right: 2px solid #888;
+}
+
+.trapezoid_left {
+    transform: skewY(-20deg) rotate(20deg);
+    left: 10px;
+}
+
+.trapezoid_right {
+    transform: skewY(20deg) rotate(-20deg);
+    right: 10px;
+}
+
+#buy_now_nav:hover {
+    cursor: pointer;
+}
+
+#buy_now_nav > p {
+    position: relative;
     z-index: 999;
-    border: 2px solid rgba(255, 255, 255, 0.5);
-    height: 98vh;
-    width: 99vw;
-    left: 50%;
-    top: 50%;
-    transform: translate(-50%, -50%);
-    opacity: 0.3;
+    color: rgb(167, 14, 14);
+    text-shadow: none;
+    font-weight: bold;
+    font-size: 13pt;
+    font-family: 'Arial Narrow', Arial, sans-serif;
 }
 
 #navigation {
@@ -78,6 +139,13 @@
     gap: 40px;
 }
 
+#navigation.invert {
+    background-color: rgb(253, 245, 235);
+    outline: 5px solid rgb(253, 245, 235);
+    border-left: 1px solid #bbb;
+    border-right: 1px solid #bbb;
+}
+
 #navigation li {
     background-color: #333;
     outline: 1px solid white;
@@ -86,9 +154,19 @@
     transform: rotate(45deg);
 }
 
+#navigation.invert li {
+    background-color: rgb(253, 245, 235);
+    outline: 1px solid black;
+}
+
 #navigation li.highlight {
     background-color: white;
     border: 3px solid #333;
+}
+
+#navigation.invert li.highlight {
+    background-color: black;
+    border: 3px solid rgb(253, 245, 235);
 }
 
 #navigation > ul > li:hover {
@@ -106,6 +184,10 @@
 	border-top: 31px solid #333;
 }
 
+#navigation.invert #bottom_square {
+	border-top: 31px solid rgb(253, 245, 235);
+}
+
 #bottom_square::before,
 #bottom_square::after {
     position: absolute;
@@ -115,6 +197,11 @@
     height: 36px;
     background-color: white;
     opacity: 0.5;
+}
+
+#navigation.invert #bottom_square::before,
+#navigation.invert #bottom_square::after {
+    background-color: #666;
 }
 
 #bottom_square::before {
@@ -138,6 +225,10 @@
 	border-bottom: 31px solid #333;
 }
 
+#navigation.invert #top_square {
+    border-bottom: 31px solid rgb(253, 245, 235);
+}
+
 #top_square::before,
 #top_square::after {
     position: absolute;
@@ -147,6 +238,11 @@
     height: 36px;
     background-color: white;
     opacity: 0.5;
+}
+
+#navigation.invert #top_square::before,
+#navigation.invert #top_square::after {
+    background-color: #666;
 }
 
 #top_square::before {
@@ -159,17 +255,428 @@
     transform: rotate(-135deg);
 }
 
+#border {
+    position: absolute;
+    z-index: 1;
+    border: 2px solid rgba(255, 255, 255, 0.5);
+    height: 98vh;
+    width: 99vw;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+    opacity: 0.3;
+}
+
+#border.invert {
+    border: 2px solid black;
+    opacity: 0.1;
+}
+
 #circle {
     position: absolute;
     left: -750px;
     top: -750px;
     width: 1500px;
     height: 1500px;
-    z-index: 999;
+    z-index: 900;
     background-image: url(./../images/Magic_Circle.png);
     background-position: center;
     background-size: contain;
-    opacity: 0.1;
     filter: invert();
+    opacity: 0.1;
     transition: 0.6s;
+}
+
+#circle.invert {
+    opacity: 0.05;
+    filter: none;
+}
+
+#cityscape {
+    display: none;
+    position: absolute;
+    width: 100vw;
+    height: 100vh;
+    bottom: 0;
+    z-index: 500;
+    opacity: 0.07;
+    transform: scaleX(-1);
+    filter: grayscale(100);
+    background-image: url(../images/background_white.jpg);
+}
+
+#small_logo {
+    display: none;
+    position: absolute;
+    z-index: 999;
+    width: 210px;
+    height: 175px;
+    left: 4%;
+    top: 3%;
+}
+
+/*** HOME PAGE ***/
+
+.home_logo {
+    position: absolute;
+    z-index: 999;
+    width: 600px;
+    height: 500px;
+    right: 0;
+    margin-right: 350px;
+    top: 15%;
+}
+
+.home_logo #main_logo {
+    width: 100%;
+    height: 100%;
+}
+
+.home_logo > p {
+    position: absolute;
+    bottom: 13%;
+    left: 10%;
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    color: white;
+    font-size: 20pt;
+    text-shadow: 2px 0 2px #333, 0 2px 2px #333;
+    text-align: center;
+}
+
+#buy_now_logo {
+    position: absolute;
+    z-index: 999;
+    left: 22%;
+    bottom: 0;
+}
+
+.buy_now_logo {
+    position: absolute;
+    top: -7px;
+    height: 44px;
+	width: 145px;
+    background-color: rgb(216, 216, 216);
+    background-image: linear-gradient(to top, rgb(107, 93, 93), rgb(244, 248, 238)10%, rgb(235, 240, 222) 10% 80%, rgb(185, 191, 199));
+}
+
+.buy_now_logo {
+    border-left: 3px solid #888;
+    border-top: 2px solid #888;
+    border-bottom: 4px solid #aaa;
+}
+
+.buy_now_logo.trapezoid_left {
+    border-right: 3px solid #888;
+}
+
+#buy_now_logo:hover {
+    cursor: pointer;
+}
+
+#buy_now_logo > p {
+    position: relative;
+    z-index: 999;
+    color: rgb(167, 14, 14);
+    text-shadow: none;
+    font-weight: bold;
+    font-size: 19pt;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+}
+
+.home_logo {
+    z-index: 500;
+}
+
+#watch_trailer,
+#buy_now_logo {
+    z-index: 999;
+}
+
+#watch_trailer:hover,
+#buy_now_logo:hover {
+    cursor: pointer;
+}
+
+#watch_trailer {
+    position: absolute;
+    right: 10%;
+    bottom: 0;
+}
+
+.watch_trailer {
+    position: absolute;
+    top: -7px;
+    height: 44px;
+	width: 185px;
+    background-color: rgb(216, 216, 216);
+    background-image: linear-gradient(to top, rgb(255, 255, 255), rgb(161, 161, 161) 10% 80%, rgb(138, 137, 137));
+}
+
+.watch_trailer {
+    border-left: 3px solid #eee;
+    border-top: 2px solid #eee;
+    border-bottom: 4px solid #999;
+}
+
+.watch_trailer.trapezoid_left {
+    border-right: 3px solid #eee;
+}
+
+#watch_trailer:hover {
+    cursor: pointer;
+}
+
+#watch_trailer > p {
+    position: relative;
+    z-index: 999;
+    color: #ddd;
+    text-shadow: none;
+    font-weight: bold;
+    font-size: 18pt;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+/*** SECTION 2 ***/
+
+#section-2 {
+    color: white;
+}
+
+.content_container {
+    position: relative;
+    font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+    text-shadow: 2px 0 2px #333, 0 2px 2px #333;
+    position: absolute;
+    top: 24%;
+    left: 5%;
+    height: 70vh;
+    width: 50vw;
+}
+
+#header_1 {
+    position: absolute;
+    font-size: 32pt;
+    padding-bottom: 10px;
+    transition: 0.9s;
+    left: 0;
+    opacity: 1;
+}
+
+#text_1 {
+    position: absolute;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 10pt;
+    line-height: 18px;
+    transition: 0.8s;
+    width: 100%;
+    left: 0;
+    top: 60px;
+    opacity: 1;
+}
+
+.image_container {
+    position: absolute;
+    z-index: 999;
+    top: 140px;
+    height: 80%;
+    width: 100%;
+    left: 0;
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    transition: 1s;
+    opacity: 1;
+}
+
+#header_1.hidden,
+#text_1.hidden,
+.image_container.hidden {
+    left: -600px;
+    opacity: 0;
+}
+
+.image {
+    position: relative;
+    width: 95%;
+    height: 90%;
+    background-size: cover, contain;
+    box-shadow: 2px 2px 15px black;
+    text-align: center;
+    background-position: center;
+}
+
+.image > h2 {
+    position: relative;
+    bottom: -75%;
+    font-size: 26pt;
+}
+
+.image_border {
+    position: absolute;
+    outline: 1px solid rgb(255, 255, 255);
+    opacity: 0.3;
+    width: 96%;
+    height: 94%;
+    left: 50%;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.image_2,
+.image_4 {
+    justify-self: flex-end;
+}
+
+#image-2-1 {
+    background-image: url(../images/explore.jpg);
+}
+
+#image-2-2 {
+    background-image: url(../images/sorcerer.jpg);
+}
+
+#image-2-3 {
+    background-image: url(../images/warlock.jpg);
+}
+
+#image-2-4 {
+    background-image: url(../images/skeletons.jpg);
+}
+
+/*** SECTION 3 ***/
+
+#section_3_content {
+    position: absolute;
+    left: 5%;
+    top: 27%;
+    width: 27%;
+    font-family: 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+}
+
+#section_3_content h1 {
+    font-size: 30pt;
+    line-height: 42px;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+#section_3_content p {
+    font-size: 10pt;
+    font-weight: bold;
+}
+
+#section_3_content ul {
+    list-style: none;
+}
+
+#section_3_content li {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    font-size: 10pt;
+    margin: 20px;
+    font-weight: bold;
+}
+
+.bullet {
+    width: 14px;
+    height: 14px;
+    background-color: black;
+    outline: 1px solid black;
+    border: 3px solid white;
+    transform: rotate(45deg);
+    margin-right: 15px;
+}
+
+.image_container_2 {
+    position: absolute;
+    bottom: 22%;
+    left: 37%;
+    width: 50vw;
+    height: 50vh;
+}
+
+.image_container_2 img {
+    height: 100%;
+    width: 100%;
+}
+
+#divider {
+    position: absolute;
+    height: 475px;
+    width: 5px;
+    background-color: var(--offwhite);
+    left: 50%;
+    top: 0;
+}
+
+#divider_square {
+    position: absolute;
+    left: 0;
+    top: 50%;
+    left: 50%;
+    width: 35px;
+    height: 35px;
+    background-color: var(--offwhite);
+    border: 1px solid #bbb;
+    outline: 2px solid var(--offwhite);
+    transform: translate( -50%, -50%) rotate(45deg);
+}
+
+#divider_square p {
+    position: absolute;
+    font-size: 16pt;
+    transform: translate(-50%, -50%) rotate(-45deg);
+    top: 50%;
+    left: 50%;
+}
+
+#before {
+    position: absolute;
+    left: 0;
+    top: 0;
+    background-color: black;
+    padding: 5px 10px 5px 10px;
+    color: white;
+    font-size: 12pt;
+    font-weight: bold;
+    margin: 15px;
+}
+
+#after {
+    position: absolute;
+    right: 0;
+    top: 0;
+    background-color: rgb(247, 204, 13);
+    padding: 5px 10px 5px 10px;
+    font-size: 12pt;
+    font-weight: bold;
+    margin: 15px;
+}
+
+#section_3_logo {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    height: 100px;
+    width: 75px;
+    margin: 10px 5px;
+}
+
+#small_city,
+#small_river {
+    position: absolute;
+    left: 0;
+    bottom: -115px;
+    width: 150px;
+    height: 100px;
+    box-shadow: 1px 1px 5px #666;
+}
+
+#small_city {
+
+}
+
+#small_river {
+    left: 165px;
 }

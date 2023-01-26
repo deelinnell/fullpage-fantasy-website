@@ -7,21 +7,25 @@
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" type="text/css" href="styles/fullpage.min.css" />
     <script src="./scripts/index.js" defer></script>
-    <title>Fullpage</title>
+    <title>Fullpage Scroll Website</title>
 </head>
 <body>
-    <div id="border"></div>
     <div id="navbar">
-        <ul>
-            <li>GAMES</li>
+        <ul class="navigation">
+            <li>GAMES <span>▼</span></li>
             <li>NEWS</li>
             <li>COMMUNITY</li>
             <li>MEDIA</li>
-            <li>BUY NOW</li>
+            <li id="buy_now_nav" class="button">
+                <div class="buy_now_nav trapezoid_left"></div>
+                <p>BUY NOW</p>
+                <div class="buy_now_nav trapezoid_right"></div>
+            </li>
         </ul>
     </div>
-    <img id="circle" src="./images/Magic_Circle.png"></img>
-    <div id="navigation">
+    <div id="cityscape"></div>
+    <img id="small_logo" src="images/dragons-dogma.png" alt="">
+    <div id="navigation" class="navigation">
         <div id="top_square"></div>
          <ul id="navMenu">
             <li id="firstPageLink" data-menuanchor="1" class="highlight"></li>
@@ -35,10 +39,70 @@
     </div>
     <div id="fullpage">
         <div class="section s1 active" id="section-1">
+            <div class="home_logo">
+                <img id="main_logo" src="images/dragons-dogma.png" alt="">
+                <p>One of the most acclaimed RPGs of all time<br>
+                    Now ready for a new generation</p>
+                <div id="buy_now_logo" class="button">
+                    <div class="buy_now_logo trapezoid_left"></div>
+                        <p>BUY NOW</p>
+                    <div class="buy_now_logo trapezoid_right"></div>
+                </div>
+                <div id="watch_trailer" class="button">
+                    <div class="watch_trailer trapezoid_left"></div>
+                        <p>WATCH TRAILER</p>
+                    <div class="watch_trailer trapezoid_right"></div>
+                </div>
+            </div>
         </div>
         <div class="section s2" id="section-2">
+            <div class="content_container">
+                <h1 id="header_1" class="hidden">Open World</h1>
+                <p id="text_1" class="hidden">In the open world of Wild Hunt, you chart your own path to adventure. You play as a bounty hunter, a man of the road. You set your own goals and choose your own destinations. Go after the bounty on the head of a nasty monster pestering a village or help a scheming prince who needs a dirty job done -- no matter what style of epic questing you crave, The Witcher will provide it.</p>
+                <div id="images_1" class="image_container hidden">
+                    <div id="image-2-1" class="image image_1">
+                        <div class="image_border"></div>
+                        <h2>Explore</h2>
+                    </div>
+                    <div id="image-2-2" class="image image_2">
+                        <div class="image_border"></div>
+                        <h2>Magic</h2>
+                    </div>
+                    <div id="image-2-3" class="image image_3">
+                        <div class="image_border"></div>
+                        <h2>Monsters</h2>
+                    </div>
+                    <div id="image-2-4" class="image image_4">
+                        <div class="image_border"></div>
+                        <h2>Adventure</h2>
+                    </div>
+                </div>
+            </div>  
         </div>
         <div class="section s3" id="section-3">
+            <div id="section_3_content">
+                <h1>Enhanced for a new generation</h1>
+                <p>Behold the dark fantasy world of the Continent like never before! This edition of The Witcher 3: Wild Hunt has been enhanced with numerous visual and technical improvements implemented with the power of the latest console generation and modern PCs in mind, including:</p>
+                <ul>
+                    <li><div class="bullet"></div> Faster loading times on console;</li>
+                    <li><div class="bullet"></div> vastly improved level of detail;</li>
+                    <li><div class="bullet"></div> a range of community created mods;</li>
+                    <li><div class="bullet"></div> brand new mods developed for this edition of the game;</li>
+                    <li><div class="bullet"></div> realtime ray tracing;</li>
+                    <li><div class="bullet"></div> and more!</li>
+                </ul>
+            </div>
+            <div class="image_container_2">
+                <img src="images/n-s-medieval.jpg" alt="">
+                <div id="divider">
+                    <div id="divider_square"><p>⟺</p></div>
+                </div>
+                <div id="before"><p>BEFORE</p></div>
+                <div id="after"><p>AFTER</p></div>
+                <img id="section_3_logo" src="images/dragon-symbol-1.png" alt="">
+                <img id="small_city" src="images/n-s-medieval.jpg" alt="">
+                <img id="small_river" src="images/river.jpeg" alt="">
+            </div>
         </div>
         <div class="section s4" id="section-4">
         </div>
@@ -47,6 +111,8 @@
         <div class="section s6" id="section-6">
         </div>
     </div>
+    <div id="border"></div>
+    <img id="circle" src="./images/Magic_Circle.png" alt=""></img>
     <script type="text/javascript" src="./scripts/fullpage.min.js"></script>
 </body>
 </html>
