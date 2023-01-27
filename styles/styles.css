@@ -307,7 +307,6 @@ body {
     opacity: 0.07;
     transform: scaleX(-1);
     filter: grayscale(100);
-    background-image: url(../images/background_white.jpg);
 }
 
 #small_logo {
@@ -558,22 +557,6 @@ body {
     justify-self: flex-end;
 }
 
-#image-2-1 {
-    background-image: url(../images/explore.jpg);
-}
-
-#image-2-2 {
-    background-image: url(../images/sorcerer.jpg);
-}
-
-#image-2-3 {
-    background-image: url(../images/warlock.jpg);
-}
-
-#image-2-4 {
-    background-image: url(../images/skeletons.jpg);
-}
-
 /*** SECTION 3 ***/
 
 #fullpage {
@@ -765,22 +748,6 @@ body {
 #images_4.image_container {
     position: absolute;
     top: 100px;
-}
-
-#image-4-1 {
-    background-image: url(../images/background_4.jpg);
-}
-
-#image-4-2 {
-    background-image: url(../images/drow.jpg);
-}
-
-#image-4-3 {
-    background-image: url(../images/battle.jpg);
-}
-
-#image-4-4 {
-    background-image: url(../images/campfire.jpg);
 }
 
 /*** SECTION 5 ***/
