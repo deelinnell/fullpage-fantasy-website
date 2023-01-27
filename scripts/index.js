@@ -1,21 +1,32 @@
+// ANCHORS
 const firstLink = document.getElementById('firstPageLink')
 const secondLink = document.getElementById('secondPageLink')
 const thirdLink = document.getElementById('thirdPageLink')
 const forthLink = document.getElementById('forthPageLink')
 const fifthLink = document.getElementById('fifthPageLink')
 const sixithLink = document.getElementById('sixithPageLink')
-const border = document.getElementById('border')
+const linkArray = [firstLink, secondLink, thirdLink, forthLink, fifthLink, sixithLink]
+// NAVBAR
 const navbar = document.getElementById('navbar')
 const navigation = document.getElementById('navigation')
 const circle = document.getElementById('circle')
-const cityscape = document.getElementById('cityscape')
 const smallLogo = document.getElementById('small_logo')
-const header_1 = document.getElementById('header_1')
-const text_1 = document.getElementById('text_1')
-const images_1 = document.getElementById('images_1')
+// SECTION 2
+const header_2 = document.getElementById('header_2')
+const text_2 = document.getElementById('text_2')
+const images_2 = document.getElementById('images_2')
+// SECTION 3
+const image_3 = document.getElementById('image-3-1')
+const small_city = document.getElementById('small_city')
+const small_river = document.getElementById('small_river')
+// SECTION 4
+const header_4 = document.getElementById('header_4')
+const text_4 = document.getElementById('text_4')
+const images_4 = document.getElementById('images_4')
+// SECTION 5
 
-
-const linkArray = [firstLink, secondLink, thirdLink, forthLink, fifthLink, sixithLink]
+// SECTION 6
+const email = document.getElementById('email')
 
 new fullpage('#fullpage', {
     sectionsColor: ['rgb(253, 245, 235)', 'rgb(253, 245, 235)', 'rgb(253, 245, 235)', 'rgb(253, 245, 235)', 'rgb(253, 245, 235)', 'rgb(253, 245, 235)'],
@@ -40,25 +51,36 @@ new fullpage('#fullpage', {
         }
         if (destination.anchor == 2) {
             removeInvert()
-            removeHidden(header_1, text_1, images_1)
+            removeHidden(header_2, text_2, images_2)
         }
         if (origin.anchor == 2) {
-            addHidden(header_1, text_1, images_1)
-        }
-        if (destination.anchor == 5) {
-            removeInvert()
-        }
-        if (destination.anchor == 4) {
-            addInvert()
+            addHidden(header_2, text_2, images_2)
         }
         if (destination.anchor == 3) {
             addInvert()
         }
+        if (destination.anchor == 4) {
+            removeInvert()
+            removeHidden(header_4, text_4, images_4)
+        }
+        if (origin.anchor == 4) {
+            addHidden(header_4, text_4, images_4)
+        }
+        if (destination.anchor == 5) {
+            addInvert()
+        }
         if (destination.anchor == 6) {
             addInvert()
+            email.classList.remove('hidden')
+        }
+        if (origin.anchor == 6) {
+            addInvert()
+            email.classList.add('hidden')
         }
     }
 })
+
+fullpage_api.setScrollingSpeed(300);
 
 function removeHidden(header, text, images) {
     header.classList.remove('hidden')
@@ -73,22 +95,16 @@ function addHidden(header, text, images) {
 }
 
 function removeInvert() {
-    border.classList.remove('invert')
     navbar.classList.remove('invert')
     navigation.classList.remove('invert')
     circle.classList.remove('invert')
-    cityscape.style.display = 'none'
 }
 
 function addInvert() {
-    border.classList.add('invert')
     navbar.classList.add('invert')
     navigation.classList.add('invert')
     circle.classList.add('invert')
-    cityscape.style.display = 'block'
 }
-
-fullpage_api.setScrollingSpeed(300);
 
 firstLink.onclick = () => scrollOnclick(1)
 secondLink.onclick = () => scrollOnclick(2)
@@ -102,4 +118,20 @@ function scrollOnclick(number) {
     const active = fullpage_api.getActiveSection()
     linkArray.forEach(link => link.classList.remove('highlight'))
     linkArray[active.anchor - 1].classList.add('highlight')
+}
+
+
+small_city.onclick = () => changeImage(small_city)
+small_river.onclick = () => changeImage(small_river)
+
+function changeImage(img) {
+    if (img == small_city) {
+        image_3.src = "/./images/n-s-medieval.jpg"
+        small_river.classList.remove('highlight')
+        small_city.classList.add('highlight')
+    } else if (img == small_river) {
+        image_3.src = "/./images/river.jpeg"
+        small_city.classList.remove('highlight')
+        small_river.classList.add('highlight')
+    }
 }

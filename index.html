@@ -7,7 +7,7 @@
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" type="text/css" href="styles/fullpage.min.css" />
     <script src="./scripts/index.js" defer></script>
-    <title>Fullpage Scroll Website</title>
+    <title>Fullpage Fantasy Website</title>
 </head>
 <body>
     <div id="navbar">
@@ -23,7 +23,7 @@
             </li>
         </ul>
     </div>
-    <div id="cityscape"></div>
+    <img id="circle" src="./images/Magic_Circle.png" alt=""></img>
     <img id="small_logo" src="images/dragons-dogma.png" alt="">
     <div id="navigation" class="navigation">
         <div id="top_square"></div>
@@ -39,6 +39,7 @@
     </div>
     <div id="fullpage">
         <div class="section s1 active" id="section-1">
+            <div class="border"></div>
             <div class="home_logo">
                 <img id="main_logo" src="images/dragons-dogma.png" alt="">
                 <p>One of the most acclaimed RPGs of all time<br>
@@ -54,12 +55,15 @@
                     <div class="watch_trailer trapezoid_right"></div>
                 </div>
             </div>
+            <p class="scroll_down">scroll down</p>
+            <div class="scroll_line"></div>
         </div>
         <div class="section s2" id="section-2">
+            <div class="border"></div>
             <div class="content_container">
-                <h1 id="header_1" class="hidden">Open World</h1>
-                <p id="text_1" class="hidden">In the open world of Wild Hunt, you chart your own path to adventure. You play as a bounty hunter, a man of the road. You set your own goals and choose your own destinations. Go after the bounty on the head of a nasty monster pestering a village or help a scheming prince who needs a dirty job done -- no matter what style of epic questing you crave, The Witcher will provide it.</p>
-                <div id="images_1" class="image_container hidden">
+                <h1 id="header_2" class="hidden">Open World</h1>
+                <p id="text_2" class="hidden">In the open world of Wild Hunt, you chart your own path to adventure. You play as a bounty hunter, a man of the road. You set your own goals and choose your own destinations. Go after the bounty on the head of a nasty monster pestering a village or help a scheming prince who needs a dirty job done -- no matter what style of epic questing you crave, The Witcher will provide it.</p>
+                <div id="images_2" class="image_container hidden">
                     <div id="image-2-1" class="image image_1">
                         <div class="image_border"></div>
                         <h2>Explore</h2>
@@ -77,12 +81,14 @@
                         <h2>Adventure</h2>
                     </div>
                 </div>
-            </div>  
+            </div>
         </div>
         <div class="section s3" id="section-3">
+            <div class="border invert"></div>
+            <div class="cityscape"></div>
             <div id="section_3_content">
                 <h1>Enhanced for a new generation</h1>
-                <p>Behold the dark fantasy world of the Continent like never before! This edition of The Witcher 3: Wild Hunt has been enhanced with numerous visual and technical improvements implemented with the power of the latest console generation and modern PCs in mind, including:</p>
+                <p>Behold the dark fantasy world of the Continent like never before! This edition has been enhanced with numerous visual and technical improvements implemented with the power of the latest console generation and modern PCs in mind, including:</p>
                 <ul>
                     <li><div class="bullet"></div> Faster loading times on console;</li>
                     <li><div class="bullet"></div> vastly improved level of detail;</li>
@@ -93,26 +99,96 @@
                 </ul>
             </div>
             <div class="image_container_2">
-                <img src="images/n-s-medieval.jpg" alt="">
+                <img id="image-3-1" src="images/n-s-medieval.jpg" alt="">
                 <div id="divider">
                     <div id="divider_square"><p>⟺</p></div>
                 </div>
                 <div id="before"><p>BEFORE</p></div>
                 <div id="after"><p>AFTER</p></div>
                 <img id="section_3_logo" src="images/dragon-symbol-1.png" alt="">
-                <img id="small_city" src="images/n-s-medieval.jpg" alt="">
+                <img id="small_city" class="highlight" src="images/n-s-medieval.jpg" alt="">
                 <img id="small_river" src="images/river.jpeg" alt="">
             </div>
+            
         </div>
         <div class="section s4" id="section-4">
+            <div class="border"></div>
+            <div class="content_container">
+                <h1 id="header_4" class="hidden">Story</h1>
+                <p id="text_4" class="hidden">In a war-torn world, with the Wild Hunt on your back, you’ll take on your most important contract -- to track down the child of prophecy, a key and a weapon which can save or destroy all.</p>
+                <div id="images_4" class="image_container hidden">
+                    <div id="image-4-1" class="image image_1">
+                        <div class="image_border"></div>
+                        <h2>Explore</h2>
+                    </div>
+                    <div id="image-4-2" class="image image_2">
+                        <div class="image_border"></div>
+                        <h2>Magic</h2>
+                    </div>
+                    <div id="image-4-3" class="image image_3">
+                        <div class="image_border"></div>
+                        <h2>Combat</h2>
+                    </div>
+                    <div id="image-4-4" class="image image_4">
+                        <div class="image_border"></div>
+                        <h2>Adventure</h2>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="section s5" id="section-5">
+            <div class="border invert"></div>
+            <div class="cityscape"></div>
+            
         </div>
         <div class="section s6" id="section-6">
+            <div class="cityscape"></div>
+            <div class="border_container">
+                <div class="border invert"></div>
+                <div id="email_container">
+                    <div id="email" class="hidden">
+                        <div class="label">
+                            <h1>ALWAYS FIRST!</h1>
+                            <p>Sign up for our newsletter.</p>
+                        </div>
+                        <div class="input">
+                            <input type="text" class="email" placeholder="Enter your e-mail address"><br>
+                            <input type="checkbox" class="checkbox">
+                            <div class="text_container">
+                                <p>I would like to receive news, special offers and other information and I am 16 years old or older.</p>
+                                <p>We will be responsible for your personal data. For more inforation please check our Privacy Policy.</p>
+                            </div>
+                            <div id="submit_button" class="button">
+                                <div class="submit_button trapezoid_left"></div>
+                                    <p>SUBMIT</p>
+                                <div class="submit_button trapezoid_right"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="footer">
+                <div class="footer_line"></div>
+                <ul>
+                    <li>TERMS OF USE & PRIVACY POLICY</li>
+                    <li>CAREERS</li>
+                    <li>USER AGREEMENT</li>
+                    <li>FAN CONTENT GUIDELINES</li>
+                </ul>
+                <div id="social_links">
+                    <img data-src="images/icons8-facebook-50.png" alt="">
+                    <img data-src="images/icons8-twitter-50.png" alt="">
+                    <img data-src="images/icons8-discord-50.png" alt="">
+                    <img data-src="images/icons8-youtube-logo-30.png" alt="">
+                </div>
+                <div class="tech_logos">
+                    <img id="nvidia" data-src="images/nvidia.png" alt="">
+                    <img id="unreal" data-src="images/unreal.png" alt="">
+                </div>
+                <p>All other copyrights and trademarks are the property of their respective owners. ©</p>
+            </div>
         </div>
     </div>
-    <div id="border"></div>
-    <img id="circle" src="./images/Magic_Circle.png" alt=""></img>
     <script type="text/javascript" src="./scripts/fullpage.min.js"></script>
 </body>
 </html>

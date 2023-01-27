@@ -25,7 +25,7 @@ body {
     background-position: top;
 }
 
-#section-5 {
+#section-4 {
     background-image: url('../images/background_3.jpg');
     background-position: bottom;
 }
@@ -72,6 +72,7 @@ body {
 #buy_now_nav {
     position: relative;
     margin-left: 40px;
+    box-shadow: 30px 10px 30px rgb(156, 189, 188), -30px 10px 30px rgb(145, 172, 171);
 }
 
 .buy_now_nav {
@@ -141,9 +142,11 @@ body {
 
 #navigation.invert {
     background-color: rgb(253, 245, 235);
+    background-image: linear-gradient(to top right, rgb(253, 245, 235), rgb(253, 245, 235), rgb(253, 245, 240));
     outline: 5px solid rgb(253, 245, 235);
     border-left: 1px solid #bbb;
     border-right: 1px solid #bbb;
+    opacity: 0.9;
 }
 
 #navigation li {
@@ -255,30 +258,31 @@ body {
     transform: rotate(-135deg);
 }
 
-#border {
+.border {
     position: absolute;
-    z-index: 1;
     border: 2px solid rgba(255, 255, 255, 0.5);
-    height: 98vh;
-    width: 99vw;
+    height: 97%;
+    width: 99%;
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
     opacity: 0.3;
+    z-index: 100;
 }
 
-#border.invert {
+.border.invert {
     border: 2px solid black;
     opacity: 0.1;
 }
 
 #circle {
+    display: block;
     position: absolute;
     left: -750px;
     top: -750px;
     width: 1500px;
     height: 1500px;
-    z-index: 900;
+    z-index: 400;
     background-image: url(./../images/Magic_Circle.png);
     background-position: center;
     background-size: contain;
@@ -288,17 +292,18 @@ body {
 }
 
 #circle.invert {
-    opacity: 0.05;
     filter: none;
+    opacity: 0.03;
 }
 
-#cityscape {
-    display: none;
+.cityscape {
+    -webkit-transform: translate3d(0,0,0);
+    display: block;
     position: absolute;
+    z-index: 100;
     width: 100vw;
     height: 100vh;
     bottom: 0;
-    z-index: 500;
     opacity: 0.07;
     transform: scaleX(-1);
     filter: grayscale(100);
@@ -348,6 +353,7 @@ body {
     z-index: 999;
     left: 22%;
     bottom: 0;
+    box-shadow: 50px 10px 40px rgb(106, 167, 161), -50px 10px 40px rgb(103, 165, 161);
 }
 
 .buy_now_logo {
@@ -370,6 +376,7 @@ body {
 }
 
 #buy_now_logo:hover {
+    z-index: 999;
     cursor: pointer;
 }
 
@@ -401,6 +408,7 @@ body {
     position: absolute;
     right: 10%;
     bottom: 0;
+    box-shadow: 50px 10px 40px rgb(144, 177, 174), -50px 10px 40px rgb(141, 175, 173);
 }
 
 .watch_trailer {
@@ -436,6 +444,29 @@ body {
     font-family: 'Trebuchet MS', sans-serif;
 }
 
+.scroll_down {
+    position: absolute;
+    bottom: 45px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    color: white;
+    z-index: 999;
+    font-size: 10pt;
+    font-family: sans-serif;
+    opacity: 0.7;
+}
+
+.scroll_line {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, 0);
+    height: 40px;
+    width: 2px;
+    background-color: white;
+    opacity: 0.4;
+}
+
 /*** SECTION 2 ***/
 
 #section-2 {
@@ -453,7 +484,7 @@ body {
     width: 50vw;
 }
 
-#header_1 {
+#header_2 {
     position: absolute;
     font-size: 32pt;
     padding-bottom: 10px;
@@ -462,7 +493,7 @@ body {
     opacity: 1;
 }
 
-#text_1 {
+#text_2 {
     position: absolute;
     font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
     font-size: 10pt;
@@ -488,8 +519,8 @@ body {
     opacity: 1;
 }
 
-#header_1.hidden,
-#text_1.hidden,
+#header_2.hidden,
+#text_2.hidden,
 .image_container.hidden {
     left: -600px;
     opacity: 0;
@@ -545,8 +576,17 @@ body {
 
 /*** SECTION 3 ***/
 
+#fullpage {
+    z-index: 300;
+}
+
+#section-3 {
+    z-index: 999;
+}
+
 #section_3_content {
     position: absolute;
+    z-index: 999;
     left: 5%;
     top: 27%;
     width: 27%;
@@ -590,6 +630,7 @@ body {
 
 .image_container_2 {
     position: absolute;
+    z-index: 999;
     bottom: 22%;
     left: 37%;
     width: 50vw;
@@ -618,7 +659,7 @@ body {
     width: 35px;
     height: 35px;
     background-color: var(--offwhite);
-    border: 1px solid #bbb;
+    border: 1px solid #666;
     outline: 2px solid var(--offwhite);
     transform: translate( -50%, -50%) rotate(45deg);
 }
@@ -627,31 +668,29 @@ body {
     position: absolute;
     font-size: 16pt;
     transform: translate(-50%, -50%) rotate(-45deg);
-    top: 50%;
+    top: 49%;
     left: 50%;
 }
 
-#before {
+#before,
+#after {
     position: absolute;
-    left: 0;
-    top: 0;
-    background-color: black;
     padding: 5px 10px 5px 10px;
-    color: white;
     font-size: 12pt;
-    font-weight: bold;
     margin: 15px;
+    font-weight: bold;
+    top: 0;
+}
+
+#before {
+    left: 0;
+    background-color: black;
+    color: white;
 }
 
 #after {
-    position: absolute;
     right: 0;
-    top: 0;
     background-color: rgb(247, 204, 13);
-    padding: 5px 10px 5px 10px;
-    font-size: 12pt;
-    font-weight: bold;
-    margin: 15px;
 }
 
 #section_3_logo {
@@ -666,17 +705,323 @@ body {
 #small_city,
 #small_river {
     position: absolute;
-    left: 0;
+    z-index: 999;
+    right: 0;
     bottom: -115px;
     width: 150px;
     height: 100px;
     box-shadow: 1px 1px 5px #666;
 }
 
-#small_city {
-
+#small_river {
+    right: 165px;
 }
 
-#small_river {
-    left: 165px;
+#small_city:hover,
+#small_river:hover {
+    cursor: pointer;
+}
+
+#small_city.highlight,
+#small_river.highlight  {
+    border: 1px solid white;
+    outline: 2px solid rgb(247, 204, 13);
+}
+
+/*** SECTION 4 ***/
+
+#section-4 {
+    color: white;
+}
+
+#header_4 {
+    position: absolute;
+    font-size: 32pt;
+    padding-bottom: 10px;
+    transition: 0.9s;
+    left: 0;
+    opacity: 1;
+}
+
+#text_4 {
+    position: absolute;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 10pt;
+    line-height: 18px;
+    transition: 0.8s;
+    width: 100%;
+    left: 0;
+    top: 60px;
+    opacity: 1;
+}
+
+#header_4.hidden,
+#text_4.hidden,
+.image_container.hidden {
+    left: -600px;
+    opacity: 0;
+}
+
+#images_4.image_container {
+    position: absolute;
+    top: 100px;
+}
+
+#image-4-1 {
+    background-image: url(../images/background_4.jpg);
+}
+
+#image-4-2 {
+    background-image: url(../images/drow.jpg);
+}
+
+#image-4-3 {
+    background-image: url(../images/battle.jpg);
+}
+
+#image-4-4 {
+    background-image: url(../images/campfire.jpg);
+}
+
+/*** SECTION 5 ***/
+
+
+
+/*** SECTION 6 ***/
+
+.border_container {
+    z-index: 1;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    height: 60%;
+}
+
+.border.invert {
+    z-index: 1;
+}
+
+.cityscape {
+    z-index: 1;
+}
+
+#email_container {
+    z-index: 999;
+    position: relative;
+    border-radius: 20px;
+    top: 35%;
+    left: 52%;
+    transform: translate(-50%, 0);
+    width: 80vw;
+    height: 35vh;
+    background-color: rgb(245, 240, 235);
+}
+
+#email {
+    position: relative;
+    left: 30%;
+    top: 42%;
+    transform: translate(-50%, -50%);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: baseline;
+    width: 70vw;
+    height: 60vh;
+    padding-top: 180px;
+    opacity: 1;
+    transition: 1s;
+}
+
+#email.hidden {
+    left: 0;
+    opacity: 0;
+}
+
+.label h1 {
+    position: relative;
+    top: 20px;
+    font-stretch: condensed;
+    font-size: 46pt;
+}
+
+.label p {
+    position: relative;
+    top: 10px;
+    font-size: 12pt;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+}
+
+.input {
+    position: relative;
+    width: 10%;
+    margin-left: 15px;
+}
+
+.input .email {
+    box-shadow: 0px 20px 30px rgb(240, 247, 246);
+}
+
+.input .checkbox {
+    box-shadow: 0px 10px 30px rgb(122, 201, 212);
+}
+
+.input .email {
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+    font-size: 12pt;
+    padding-left: 15px;
+    margin-bottom: 15px;
+    height: 40px;
+    width: 520px;
+}
+
+.input .checkbox {
+    position: relative;
+    top: 0;
+    display: inline;
+    height: 16px;
+    width: 16px;
+}
+
+.input .text_container {
+    position: absolute;
+    display: inline-block;
+    margin-left: 10px;
+    width: 500px;
+}
+
+.input p {
+    position: relative;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+    font-size: 10pt;
+    top: -2px;
+}
+
+.label  {
+    font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    height: 100%;
+}
+
+label .checkbox {
+    display: inline-block;
+}
+
+
+#submit_button {
+    position: absolute;
+    z-index: 999;
+    top: 110px;
+    left: 60px;
+    box-shadow: 50px 30px 60px rgb(212, 233, 232), -50px 30px 60px rgb(209, 230, 229);
+}
+
+#submit_button:hover {
+    cursor: pointer;
+}
+
+.submit_button {
+    position: absolute;
+    top: -8px;
+    height: 54px;
+	width: 145px;
+    background-color: rgb(216, 216, 216);
+    background-image: linear-gradient(to top, rgb(107, 93, 93), rgb(244, 248, 238)10%, rgb(235, 240, 222) 10% 80%, rgb(185, 191, 199));
+    border-left: 3px solid #888;
+    border-top: 2px solid #888;
+    border-bottom: 4px solid #aaa;
+}
+
+.submit_button.trapezoid_left {
+    border-right: 3px solid #888;
+}
+
+#submit_button p {
+    position: relative;
+    z-index: 999;
+    color: rgb(167, 14, 14);
+    text-shadow: none;
+    font-weight: bold;
+    font-size: 22pt;
+    font-family: 'Arial Narrow', Arial, sans-serif;
+}
+
+#footer {
+    position: absolute;
+    height: 40%;
+    width: 100vw;
+    bottom: 0;
+    background-color: black;
+    z-index: 900;
+    color: white;
+}
+
+.footer_line {
+    position: absolute;
+    top: 10px;
+    height: 2px;
+    width: 100%;
+    background-color: white;
+    opacity: 0.3;
+}
+
+#footer ul {
+    position: relative;
+    margin-top: 20px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    list-style: none;
+    gap: 40px;
+    font-family: fantasy;
+    font-size: 14pt;
+    letter-spacing: 3px;
+}
+
+#footer li:hover {
+    cursor: pointer;
+}
+
+#social_links {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin-top: 50px;
+    gap: 40px;
+}
+
+#social_links img {
+    width: 40px;
+    height: 40px;
+}
+
+#social_links img:hover {
+    cursor: pointer;
+}
+
+.tech_logos {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 40px;
+    gap: 40px;
+}
+
+#nvidia {
+    width: 220px;
+    height: 60px;
+}
+
+#unreal {
+    width: 220px;
+    height: 80px;
+}
+
+#footer > p {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translate(-50%, 0);
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 9pt;
 }
