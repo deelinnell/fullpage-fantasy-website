@@ -477,10 +477,11 @@ body {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     text-shadow: 2px 0 2px #333, 0 2px 2px #333;
     position: absolute;
-    top: 24%;
+    top: 22%;
     left: 5%;
     height: 70vh;
     width: 50vw;
+    min-width: 550px;
 }
 
 #header_2 {
@@ -507,13 +508,14 @@ body {
 .image_container {
     position: absolute;
     z-index: 999;
-    top: 140px;
+    top: 130px;
     height: 80%;
     width: 100%;
     left: 0;
     display: grid;
+    column-gap: 10px;
+    row-gap: 15px;
     grid-template-columns: auto auto;
-    align-items: center;
     transition: 1s;
     opacity: 1;
 }
@@ -527,22 +529,32 @@ body {
 
 .image {
     position: relative;
-    width: 95%;
-    height: 90%;
+    width: 100%;
+    height: 100%;
     background-size: cover, contain;
-    box-shadow: 2px 2px 15px black;
-    text-align: center;
     background-position: center;
 }
 
-.image > h2 {
+.image_container_individual {
     position: relative;
-    bottom: -75%;
+    width: 98%;
+    height: 95%;
+    box-shadow: 2px 2px 15px black;
+    text-align: center;
+}
+
+.image_container_individual > h2 {
+    position: absolute;
     font-size: 26pt;
+    z-index: 999;
+    bottom: 10%;
+    left: 50%;
+    transform: translate(-50%, 0);
 }
 
 .image_border {
     position: absolute;
+    z-index: 999;
     outline: 1px solid rgb(255, 255, 255);
     opacity: 0.3;
     width: 96%;
@@ -550,11 +562,6 @@ body {
     left: 50%;
     top: 50%;
     transform: translate(-50%, -50%);
-}
-
-.image_2,
-.image_4 {
-    justify-self: flex-end;
 }
 
 /*** SECTION 3 ***/
@@ -747,7 +754,7 @@ body {
 
 #images_4.image_container {
     position: absolute;
-    top: 100px;
+    top: 120px;
 }
 
 /*** SECTION 5 ***/
