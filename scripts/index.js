@@ -126,11 +126,11 @@ small_river.onclick = () => changeImage(small_river)
 
 function changeImage(img) {
     if (img == small_city) {
-        image_3.src = "/./images/n-s-medieval.jpg"
+        image_3.src = "./images/n-s-medieval.jpg"
         small_river.classList.remove('highlight')
         small_city.classList.add('highlight')
     } else if (img == small_river) {
-        image_3.src = "/./images/river.jpeg"
+        image_3.src = "./images/river.jpeg"
         small_city.classList.remove('highlight')
         small_river.classList.add('highlight')
     }
