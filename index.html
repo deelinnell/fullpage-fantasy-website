@@ -6,6 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="styles/styles.css">
     <link rel="stylesheet" type="text/css" href="styles/fullpage.min.css" />
+    <link rel="icon" type="image/x-icon" href="/images/favicon.ico.png">
     <script src="./scripts/index.js" defer></script>
     <title>Fullpage Fantasy Website</title>
 </head>
@@ -36,6 +37,16 @@
             <li id="sixithPageLink" data-menuanchor="6"></li>
         </ul>
         <div id="bottom_square"></div>
+        <div id="hover_menu_container">
+            <ul id="hover_menu">
+                <li id="firstPageLink_hover" class="highlight" data-menuanchor="1"><div class="bullet_nav"></div>Home</li>
+                <li id="secondPageLink_hover" data-menuanchor="2"><div class="bullet_nav"></div>World</li>
+                <li id="thirdPageLink_hover" data-menuanchor="3"><div class="bullet_nav"></div>Enhanced</li>
+                <li id="forthPageLink_hover" data-menuanchor="4"><div class="bullet_nav"></div>Story</li>
+                <li id="fifthPageLink_hover" data-menuanchor="5"><div class="bullet_nav"></div>Trailer</li>
+                <li id="sixithPageLink_hover" data-menuanchor="6"><div class="bullet_nav"></div>Contact</li>
+            </ul>
+        </div>
     </div>
     <div id="fullpage">
         <div class="section s1 active" id="section-1">
@@ -71,7 +82,7 @@
                         </img>
                     </div>
                     <div class="image_container_individual image_2">
-                        <img id="image-2-2" class="image " data-src="images/sorcerer.jpg">
+                        <img id="image-2-2" class="image image_2" data-src="images/sorcerer.jpg">
                             <div class="image_border"></div>
                             <h2>Magic</h2>
                         </img>
@@ -107,7 +118,7 @@
                 </ul>
             </div>
             <div class="image_container_2">
-                <img id="image-3-1" data-src="images/n-s-medieval.jpg" alt="">
+                <img id="image-3-1" class="hidden" data-src="images/n-s-medieval.jpg" alt="">
                 <div id="divider">
                     <div id="divider_square"><p>⟺</p></div>
                 </div>
@@ -155,6 +166,24 @@
         <div class="section s5" id="section-5">
             <div class="border invert"></div>
             <img class="cityscape" data-src="images/background_white.jpg"></img>
+            <div id="video_container">
+                <div id="video_header">
+                    <ul>
+                        <li>VIDEOS</li>
+                        <li>SCREENSHOTS</li>
+                        <li>WALLPAPERS</li>
+                    </ul>
+                </div>
+                <div id="video_main">
+                    <div id="video_left">
+                        <div id="main_video_content"></div>
+                    </div>
+                    <div id="video_right">
+                        <ul id="video_list">
+                        </ul>
+                    </div>
+                </div>
+            </div>
         </div>
         <div class="section s6" id="section-6">
             <img class="cityscape" data-src="images/background_white.jpg"></img>
@@ -205,5 +234,7 @@
         </div>
     </div>
     <script type="text/javascript" src="./scripts/fullpage.min.js"></script>
+    <script type="text/javascript" src="https://www.youtube.com/iframe_api"></script>
+    <script src="https://apis.google.com/js/api.js"></script>
 </body>
 </html>
