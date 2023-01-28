@@ -89,7 +89,6 @@ new fullpage('#fullpage', {
             email.classList.remove('hidden')
         }
         if (origin.anchor == 6) {
-            addInvert()
             email.classList.add('hidden')
         }
     }
