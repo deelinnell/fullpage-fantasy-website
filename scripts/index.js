@@ -73,10 +73,6 @@ new fullpage('#fullpage', {
         }
         if (destination.anchor == 3) {
             addInvert()
-            image_3.classList.remove('hidden')
-        }
-        if (origin.anchor == 3) {
-            image_3.classList.add('hidden')
         }
         if (destination.anchor == 4) {
             removeInvert()
