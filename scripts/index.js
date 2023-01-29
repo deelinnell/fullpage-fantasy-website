@@ -35,9 +35,6 @@ const images_4 = document.getElementById('images_4')
 // SECTION 6
 const email = document.getElementById('email')
 
-
-
-
 new fullpage('#fullpage', {
     sectionsColor: ['rgb(253, 245, 235)', 'rgb(253, 245, 235)', 'rgb(253, 245, 235)', 'rgb(253, 245, 235)', 'rgb(253, 245, 235)', 'rgb(253, 245, 235)'],
     anchors: ['1', '2', '3', '4', '5', '6'],
@@ -93,7 +90,6 @@ new fullpage('#fullpage', {
             email.classList.remove('hidden')
         }
         if (origin.anchor == 6) {
-            addInvert()
             email.classList.add('hidden')
         }
     }
