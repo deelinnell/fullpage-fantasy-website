@@ -63,7 +63,9 @@ new fullpage('#fullpage', {
         }
         if (destination.anchor == 2) {
             removeInvert()
-            removeHidden(header_2, text_2, images_2)
+            setTimeout(() => {
+                removeHidden(header_2, text_2, images_2)
+            }, 400)
         }
         if (origin.anchor == 2) {
             addHidden(header_2, text_2, images_2)
@@ -73,7 +75,9 @@ new fullpage('#fullpage', {
         }
         if (destination.anchor == 4) {
             removeInvert()
-            removeHidden(header_4, text_4, images_4)
+            setTimeout(() => {
+                removeHidden(header_4, text_4, images_4)
+            }, 400)
         }
         if (origin.anchor == 4) {
             addHidden(header_4, text_4, images_4)
