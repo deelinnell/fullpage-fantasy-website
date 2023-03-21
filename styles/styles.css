@@ -16,6 +16,7 @@ body {
 }
 
 #section-1 {
+    background-color: #666;	
     background-image: url('../images/background_1.jpg');
     background-position: bottom;
 }
